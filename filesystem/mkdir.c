@@ -1,0 +1,23 @@
+# include <stdio.h>
+# include <stdlib.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+
+int main (int argc, char *argv[]){
+  int i;
+
+  if (argc < 2) {
+    fprintf(stderr, "%s: No Argument\n", argv[0]);
+    exit(1);
+  }
+
+  for (i = 1; i < argc; i++) {
+    printf("Created Directory Name: %s\n", argv[1]);
+    if (mkdir(argv[i], 0777) < 0) {
+      perror(argv[i]);
+      exit(1);
+    }
+  }
+
+  exit(0);
+}

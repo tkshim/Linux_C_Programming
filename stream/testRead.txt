@@ -1,0 +1,2 @@
+This is testRead file.
+AAAAABBBBBCCCCCDDDDD
